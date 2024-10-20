@@ -1,0 +1,19 @@
+<div>
+    <h1>Mi Carrito</h1>
+    {{#if cart.products.length}}
+    <ul>
+        {{#each cart.products}}
+        <li>
+            <h2>{{this.product.title}}</h2>
+            <p>Precio: ${{this.product.price}}</p>
+            <p>Cantidad: {{this.quantity}}</p>
+            <button class="delete-from-cart" data-id="{{this.product._id}}">Eliminar del Carrito</button>
+        </li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p>El carrito está vacío.</p>
+    {{/if}}
+
+    <script src="/js/index.js"></script>
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "segunda-entrega-rec",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-handlebars": "^8.0.1",
+    "handlebars-helpers": "^0.10.0",
+    "mongoose": "^8.7.0",
+    "mongoose-paginate-v2": "^1.8.5",
+    "socket.io": "^4.8.0",
+    "sockets": "^0.4.2"
+  },
+  "type": "module"
+}

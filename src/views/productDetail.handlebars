@@ -1,0 +1,48 @@
+
+<h1>Shorts de Playa</h1>
+<p><strong>Descripción:</strong> Shorts de playa de secado rápido, ideales para vacaciones.</p>
+<p><strong>Código:</strong> SP-006</p>
+<p><strong>Precio:</strong> $24.99</p>
+<p><strong>Categoría:</strong> shorts</p>
+<p><strong>Disponibilidad:</strong> En Stock</p>
+<p><strong>Stock Disponible:</strong> 80</p>
+
+<button id="addToCartBtn" data-product-id="6705d3af9a6b50542b37b3e4">Agregar al Carrito</button>
+
+<a href="/">Volver al Inicio</a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const addToCartBtn = document.getElementById('addToCartBtn');
+
+        if (addToCartBtn) {
+            addToCartBtn.addEventListener('click', async function () {
+                const productId = this.getAttribute('data-product-id');
+                const cartId = '67061cbe0c36de8b8553b67c';
+
+                try {
+                    const response = await fetch(`/carts/${cartId}/products/${productId}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                    });
+
+                    if (response.ok) {
+                        alert('Producto agregado al carrito');
+                    } else {
+                        const errorData = await response.json();
+                        console.error('Error al agregar al carrito:', errorData);
+                        alert('No se pudo agregar el producto al carrito');
+                    }
+                } catch (error) {
+                    console.error('Error en la solicitud:', error);
+                }
+            });
+        } else {
+            console.error('El botón "Agregar al Carrito" no fue encontrado en el DOM.');
+        }
+    });
+</script>
+
+<script src="/js/index.js"></script>
